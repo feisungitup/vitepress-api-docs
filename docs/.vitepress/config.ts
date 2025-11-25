@@ -22,7 +22,7 @@ export default defineConfig({
           {
             text: 'Introduction',
             items: [
-              { text: 'Overview', link: '/' },
+              { text: 'Overview', link: '/api/' },
               { text: 'Quick Start', link: '/api/quick-start' },
               { text: 'Authentication', link: '/api/authentication' }
             ]
@@ -50,7 +50,7 @@ export default defineConfig({
           {
             text: '介绍',
             items: [
-              { text: '概述', link: '/zh/' },
+              { text: '概述', link: '/zh/api/' },
               { text: '快速开始', link: '/zh/api/quick-start' },
               { text: '身份认证', link: '/zh/api/authentication' }
             ]
