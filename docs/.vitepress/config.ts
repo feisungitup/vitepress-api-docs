@@ -21,6 +21,7 @@ export default defineConfig({
         sidebar: [
           {
             text: 'Introduction',
+            collapsed: false,
             items: [
               { text: 'Overview', link: '/api/' },
               { text: 'Quick Start', link: '/api/quick-start' },
@@ -29,6 +30,7 @@ export default defineConfig({
           },
           {
             text: 'API Reference',
+            collapsed: false,
             items: [
               { text: 'Users', link: '/api/users' },
               { text: 'Products', link: '/api/products' }
@@ -49,6 +51,7 @@ export default defineConfig({
         sidebar: [
           {
             text: '介绍',
+            collapsed: false,
             items: [
               { text: '概述', link: '/zh/api/' },
               { text: '快速开始', link: '/zh/api/quick-start' },
@@ -57,6 +60,7 @@ export default defineConfig({
           },
           {
             text: 'API 参考',
+            collapsed: false,
             items: [
               { text: '用户管理', link: '/zh/api/users' },
               { text: '产品管理', link: '/zh/api/products' }
