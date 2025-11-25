@@ -1,36 +1,114 @@
----
-layout: home
+# Introduction
 
-hero:
-  name: "API Documentation"
-  text: "Build modern APIs with confidence"
-  tagline: Comprehensive API reference with examples and best practices
-  actions:
-    - theme: brand
-      text: Get Started
-      link: /api/
-    - theme: alt
-      text: View on GitHub
-      link: https://github.com/yourusername/vitepress-api-docs
+Welcome to the API documentation. This guide will help you integrate our API into your application.
 
-features:
-  - icon: 🚀
-    title: RESTful API
-    details: Modern REST API design following industry best practices with JSON responses
-  - icon: 🔒
-    title: Secure Authentication
-    details: Token-based authentication system ensuring secure access to your resources
-  - icon: 📝
-    title: Comprehensive Documentation
-    details: Detailed documentation with request/response examples and error handling
-  - icon: 🌍
-    title: International Support
-    details: Multi-language documentation support for global teams
-  - icon: ⚡
-    title: Fast & Reliable
-    details: High-performance API with 99.9% uptime guarantee
-  - icon: 🛠️
-    title: Developer Friendly
-    details: Easy-to-use SDKs and client libraries for popular programming languages
----
+## Overview
 
+Our API is organized around REST. It has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
+
+## Base URL
+
+All API requests should be made to:
+
+```
+https://api.example.com/v1
+```
+
+## Authentication
+
+All API requests require authentication using an API key. Include your API key in the request header:
+
+```http
+Authorization: Bearer YOUR_API_KEY
+```
+
+## Request Format
+
+All POST requests should include a `Content-Type` header:
+
+```http
+Content-Type: application/json
+```
+
+## Response Format
+
+All responses are returned in JSON format:
+
+```json
+{
+  "success": true,
+  "data": {
+    // Response data here
+  },
+  "message": "Operation completed successfully"
+}
+```
+
+## Error Handling
+
+When an error occurs, the API returns an appropriate HTTP status code and error details:
+
+```json
+{
+  "success": false,
+  "error": {
+    "code": "invalid_request",
+    "message": "Invalid request parameters"
+  }
+}
+```
+
+### Common HTTP Status Codes
+
+| Status Code | Description |
+|------------|-------------|
+| 200 | Success |
+| 201 | Created |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+| 404 | Not Found |
+| 500 | Internal Server Error |
+
+## Rate Limiting
+
+API requests are limited to 1000 requests per hour per API key. Rate limit information is included in response headers:
+
+```http
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 999
+X-RateLimit-Reset: 1609459200
+```
+
+## Pagination
+
+List endpoints support pagination using the following parameters:
+
+- `page` - Page number (default: 1)
+- `limit` - Items per page (default: 20, max: 100)
+
+```http
+GET /api/v1/users?page=2&limit=50
+```
+
+Response includes pagination metadata:
+
+```json
+{
+  "success": true,
+  "data": [...],
+  "pagination": {
+    "page": 2,
+    "limit": 50,
+    "total": 1000,
+    "pages": 20
+  }
+}
+```
+
+## Next Steps
+
+- [Quick Start Guide](/api/quick-start)
+- [Authentication Details](/api/authentication)
+- [User Management](/api/users)
+- [Product Management](/api/products)
