@@ -5,7 +5,7 @@ export default defineConfig({
   description: 'Complete API Documentation with i18n support',
   
   // 如果部署到 GitHub Pages，需要设置 base
-  // base: '/vitepress-api-docs/',
+  base: '/vitepress-api-docs/',
   
   // 重写 URL，将根路径重定向到 /en/
   rewrites: {
